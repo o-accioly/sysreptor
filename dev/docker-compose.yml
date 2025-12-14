@@ -34,7 +34,7 @@ services:
     environment:
       # DISPLAY: :0 # for running with --ui in WSL 2 with XServer
       FRONTEND_ADMIN_USER: "reptor"
-    env_file: ../deploy/stack.env
+    env_file: stack.env
     volumes:
       - type: bind
         source: ../packages/
@@ -206,7 +206,7 @@ services:
       REDIS_URL: redis://:reportcreator@redis:6379/0
       # CELERY_BROKER_URL: amqp://reportcreator:reportcreator@rabbitmq:5672/
       # CELERY_RESULT_BACKEND: sysreptor.utils.celery_worker:CustomRPCBackend://reportcreator:reportcreator@rabbitmq:5672/
-    env_file: ../deploy/stack.env
+    env_file: stack.env
     # healthcheck:
     #   test: ["CMD", "curl", "-f", "-so", "/dev/null", "http://localhost:8000/api/public/utils/healthcheck/"]
     #   interval: 30s
